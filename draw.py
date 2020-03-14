@@ -2,6 +2,53 @@ from display import *
 from matrix import *
 
 
+  # ====================
+  # add the points for a rectagular prism whose
+  # upper-left corner is (x, y, z) with width,
+  # height and depth dimensions.
+  # ====================
+def add_box( points, x, y, z, width, height, depth ):
+    pass
+
+  # ====================
+  # Generates all the points along the surface
+  # of a sphere with center (cx, cy, cz) and
+  # radius r.
+  # Returns a matrix of those points
+  # ====================
+def generate_sphere( points, cx, cy, cz, r, step ):
+    pass
+
+  # ====================
+  # adds all the points for a sphere with center
+  # (cx, cy, cz) and radius r to points
+  # should call generate_sphere to create the
+  # necessary points
+  # ====================
+def add_sphere( points, cx, cy, cz, r, step ):
+    pass
+
+
+  # ====================
+  # Generates all the points along the surface
+  # of a torus with center (cx, cy, cz) and
+  # radii r0 and r1.
+  # Returns a matrix of those points
+  # ====================
+def generate_torus( points, cx, cy, cz, r0, r1, step ):
+    pass
+
+  # ====================
+  # adds all the points for a torus with center
+  # (cx, cy, cz) and radii r0, r1 to points
+  # should call generate_torus to create the
+  # necessary points
+  # ====================
+def add_torus( points, cx, cy, cz, r0, r1, step ):
+    pass
+
+
+
 def add_circle( points, cx, cy, cz, r, step ):
     t = 0
     while (t <= 1.0):
