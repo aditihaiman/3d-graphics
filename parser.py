@@ -8,6 +8,22 @@ The file follows the following format:
      Every command is a single character that takes up a line
      Any command that requires arguments must have those arguments in the second line.
      The commands are as follows:
+     
+        sphere: add a sphere to the edge matrix -
+                takes 4 arguemnts (cx, cy, cz, r)
+        torus: add a torus to the edge matrix -
+               takes 5 arguemnts (cx, cy, cz, r1, r2)
+        box: add a rectangular prism to the edge matrix -
+             takes 6 arguemnts (x, y, z, width, height, depth)
+             
+             
+        circle: add a circle to the edge matrix -
+                takes 4 arguments (cx, cy, cz, r)
+        hermite: add a hermite curve to the edge matrix -
+                 takes 8 arguments (x0, y0, x1, y1, rx0, ry0, rx1, ry1)
+        bezier: add a bezier curve to the edge matrix -
+                takes 8 arguments (x0, y0, x1, y1, x2, y2, x3, y3)
+     
          line: add a line to the edge matrix -
                takes 6 arguemnts (x0, y0, z0, x1, y1, z1)
          ident: set the transform matrix to the identity matrix -
@@ -58,6 +74,12 @@ def parse_file( fname, pofloats, transform, screen, color ):
         
         elif(line[0] == 'apply'):
             matrix_mult(transform, pofloats)
+            
+        elif(line[0] == 'box'):
+            add_box(pofloats, float(line2[0]), float(line2[1]), float(line2[2]), float(line2[3]), float(line2[4]), float(line2[5]))
+        
+        elif(line[0] == 'sphere'):
+            generate_sphere(pofloats, float(line2[0]), float(line2[1]), float(line2[2]), float(line2[3]), STEP)
             
         elif(line[0] == 'bezier'):
             add_curve(pofloats, float(line2[0]), float(line2[1]), float(line2[2]), float(line2[3]), float(line2[4]), float(line2[5]), float(line2[6]), float(line2[7]), STEP, 1)
