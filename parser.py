@@ -79,7 +79,7 @@ def parse_file( fname, pofloats, transform, screen, color ):
             add_box(pofloats, float(line2[0]), float(line2[1]), float(line2[2]), float(line2[3]), float(line2[4]), float(line2[5]))
         
         elif(line[0] == 'sphere'):
-            add_sphere(pofloats, float(line2[0]), float(line2[1]), float(line2[2]), float(line2[3]), float(line2[4]))
+            add_sphere(pofloats, float(line2[0]), float(line2[1]), float(line2[2]), float(line2[3]), STEP)
             
         elif(line[0] == 'torus'):
             add_torus(pofloats, float(line2[0]), float(line2[1]), float(line2[2]), float(line2[3]), float(line2[4]), STEP)

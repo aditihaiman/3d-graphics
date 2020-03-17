@@ -8,9 +8,9 @@ MAX_COLOR = 255
 RED = 0
 GREEN = 1
 BLUE = 2
-STEP = 0.001
+STEP = 0.01
 
-DEFAULT_COLOR = [135,206,235]
+DEFAULT_COLOR = [255,0,0]
 
 def new_screen( width = XRES, height = YRES ):
     screen = []
