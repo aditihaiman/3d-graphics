@@ -8,7 +8,7 @@ MAX_COLOR = 255
 RED = 0
 GREEN = 1
 BLUE = 2
-STEP = 0.01
+STEP = 0.05
 
 DEFAULT_COLOR = [0, 0, 0]
 

@@ -79,7 +79,10 @@ def parse_file( fname, pofloats, transform, screen, color ):
             add_box(pofloats, float(line2[0]), float(line2[1]), float(line2[2]), float(line2[3]), float(line2[4]), float(line2[5]))
         
         elif(line[0] == 'sphere'):
-            generate_sphere(pofloats, float(line2[0]), float(line2[1]), float(line2[2]), float(line2[3]), STEP)
+            add_sphere(pofloats, float(line2[0]), float(line2[1]), float(line2[2]), float(line2[3]), STEP)
+            
+        elif(line[0] == 'torus'):
+            add_torus(pofloats, float(line2[0]), float(line2[1]), float(line2[2]), float(line2[3]), float(line2[4]), STEP)
             
         elif(line[0] == 'bezier'):
             add_curve(pofloats, float(line2[0]), float(line2[1]), float(line2[2]), float(line2[3]), float(line2[4]), float(line2[5]), float(line2[6]), float(line2[7]), STEP, 1)

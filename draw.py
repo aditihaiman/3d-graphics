@@ -27,10 +27,10 @@ def add_box( points, x, y, z, width, height, depth ):
   # radius r.
   # Returns a matrix of those points
   # ====================
-def generate_sphere( points, cx, cy, cz, r, step ):
+def add_sphere( points, cx, cy, cz, r, step ):
     rot = 0
-    circ = 0
     while rot < 1.0:
+        circ = 0
         while circ < 1.0:
             X = r * math.cos(math.pi * circ) + cx
             Y = r * math.sin(math.pi * circ) * math.cos(2*math.pi*rot) + cy
@@ -45,8 +45,8 @@ def generate_sphere( points, cx, cy, cz, r, step ):
   # should call generate_sphere to create the
   # necessary points
   # ====================
-def add_sphere( points, cx, cy, cz, r, step ):
-    pass
+#def add_sphere( points, cx, cy, cz, r, step ):
+#    pass
 
 
   # ====================
@@ -55,8 +55,8 @@ def add_sphere( points, cx, cy, cz, r, step ):
   # radii r0 and r1.
   # Returns a matrix of those points
   # ====================
-def generate_torus( points, cx, cy, cz, r0, r1, step ):
-    pass
+#def generate_torus( points, cx, cy, cz, r0, r1, step ):
+#    pass
 
   # ====================
   # adds all the points for a torus with center
@@ -64,8 +64,20 @@ def generate_torus( points, cx, cy, cz, r0, r1, step ):
   # should call generate_torus to create the
   # necessary points
   # ====================
+  ## r0 is radius of circular cross section
+  ## r1 is distance for torus center to center of cross-section
+  
 def add_torus( points, cx, cy, cz, r0, r1, step ):
-    pass
+    t = 0.0
+    while t < 1.0:
+        p = 0.0
+        while p < 1.0:
+            X = math.cos(2*math.pi*p) * (r0 * math.cos(2*math.pi*t) + r1) + cx
+            Y = r0 * math.sin(2*math.pi*t) + cy
+            Z = -1 * math.sin(2*math.pi*p) * (r0 * math.cos(2*math.pi*t) + r1) + cz
+            add_edge(points, X, Y, Z, X, Y, Z)
+            p+= step
+        t+= step
 
 
 
