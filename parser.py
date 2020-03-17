@@ -10,7 +10,7 @@ The file follows the following format:
      The commands are as follows:
      
         sphere: add a sphere to the edge matrix -
-                takes 4 arguemnts (cx, cy, cz, r)
+                takes 5 arguemnts (cx, cy, cz, r, step)
         torus: add a torus to the edge matrix -
                takes 5 arguemnts (cx, cy, cz, r1, r2)
         box: add a rectangular prism to the edge matrix -
@@ -79,7 +79,7 @@ def parse_file( fname, pofloats, transform, screen, color ):
             add_box(pofloats, float(line2[0]), float(line2[1]), float(line2[2]), float(line2[3]), float(line2[4]), float(line2[5]))
         
         elif(line[0] == 'sphere'):
-            add_sphere(pofloats, float(line2[0]), float(line2[1]), float(line2[2]), float(line2[3]), STEP)
+            add_sphere(pofloats, float(line2[0]), float(line2[1]), float(line2[2]), float(line2[3]), float(line2[4]))
             
         elif(line[0] == 'torus'):
             add_torus(pofloats, float(line2[0]), float(line2[1]), float(line2[2]), float(line2[3]), float(line2[4]), STEP)
